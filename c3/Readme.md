@@ -20,7 +20,7 @@ For example: The `print()` method of Java class `HelloWorld.java` would be named
 
 Section 11.3 of the book covers more precise details of the naming convention
 
-## From section *3.1.2 Native Method Arguments*
+### From section *3.1.2 Native Method Arguments*
 There are two standard parameters for a native method
 1. `JNIEnv` interface pointer
 	- *"the JNIEnv interface pointer, points to a location that contains a
@@ -37,7 +37,7 @@ and instance method
 the object instance that the method is being called on
 	b. Static method: reference to the class the method is called on
 
-## From section 3.1.3 Mapping of Types
+### From section *3.1.3 Mapping of Types*
 There are two types
 1. Primitives (`int`, `float`, `char`, etc)
 2. Reference (classes, instances, arrays)
