@@ -15,7 +15,19 @@ There are two differences between a Java method and a JNI method
 1. A native method must have the `native` modifier
 2. A native method is terminated with a semicolon since there is no
 implementation in the Java code
-	- Native method: `private native void print();`
-	- Normal method: `private void print() { }`
+	- Normal Java method: `private void print() { }`
+	- Native Java method: `private native void print();`
 
-Before calling a native method the library must be loaded using the `System.loadLibrary()`
+Before calling a native method the library must be loaded using the 
+`System.loadLibrary("YourLibraryHere")`
+
+### From section *2.4 Create the Native Method Header File*
+Native methods always receive two extract args in addition to args declared in the Java
+method declaration.
+1. `JNIEnv` interface pointer
+2. A `jobject` reference to the Java object that the native method is being called from 
+	- ie. In the hello world example this would be the `HelloWorld` object
+
+### From section *2.5 Write the Native Method Implementation*
+`jni.h` is the header file that provides native code with JNI functions. This
+include is required when writing native methods
