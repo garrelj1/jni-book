@@ -44,3 +44,14 @@ There are two types
 
 JNI treats the two types differently
 
+**Primities** (defined in `jni.h`) are simply the Java type prefixed with a "j"
+
+A few examples:
+
+| Java primitives | JNI Native Type |
+| ---------       | --------------- |
+| `int`           | `jint`          |
+| `float`         | `jfloat`        |
+| `char`          | `jchar`         |
+
+**References** 
