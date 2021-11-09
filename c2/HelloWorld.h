@@ -2,6 +2,8 @@
 #include <jni.h>
 /* Header for class HelloWorld */
 
+// Created by running javah -jni HelloWorld 
+
 #ifndef _Included_HelloWorld
 #define _Included_HelloWorld
 #ifdef __cplusplus
