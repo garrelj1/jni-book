@@ -9,6 +9,6 @@ class Prompt {
 	}
 
 	static {
-		System.loadLibrary("Propmt");
+		System.loadLibrary("Prompt");
 	}
 }

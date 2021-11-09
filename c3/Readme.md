@@ -23,7 +23,7 @@ Section 11.3 of the book covers more precise details of the naming convention
 ### From section *3.1.2 Native Method Arguments*
 There are two standard parameters for a native method
 1. `JNIEnv` interface pointer
-	- *"the JNIEnv interface pointer, points to a location that contains a
+	- *"the JNIEnv interface pointer, points to a location :that contains a
  pointer to a function table. Each entry in the function table points to a
 JNI function. Native methods always access data structures in the Java
 virtual machine through one of the JNI functions"*
@@ -54,4 +54,12 @@ A few examples:
 | `float`         | `jfloat`        |
 | `char`          | `jchar`         |
 
-**References** 
+**References** are C pointer types which refer to internal data structures in the JVM.
+All references are of type `jobject` and JNI defines a few reference types such as
+`jstring`, or `jobjectArray`. Both of these are subtypes of `jobejct`
+
+### From section *3.2.4 Other JNI String Functions*
+
+How many characters are in a jstring? Use `GetStringLength`
+How many bytes are needed to represent a jdstring in UTF-8? Use the ANSI C `strlen`
+function on the return value of `GetStringUTFChars` or call the JNI function `GetStringUTFLength`
