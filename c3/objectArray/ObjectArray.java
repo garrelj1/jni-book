@@ -12,7 +12,7 @@ class ObjectArray {
 	}
 
 	static {
-		System.loadLibrary("ObjectArrayTest");
+		System.loadLibrary("ObjectArray");
 	}
 
 }

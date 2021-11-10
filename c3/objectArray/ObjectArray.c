@@ -6,7 +6,7 @@
 // This is because the native method is static, therefor the class is passed instead
 // of the object instance, which would be of type jobject
 JNIEXPORT jobjectArray JNICALL
-Java_ObjectArrayTest_initInt2DArray(JNIEnv *env, jclass obj, int size) {
+Java_ObjectArray_initInt2DArray(JNIEnv *env, jclass obj, int size) {
 	jobjectArray result;
 	int i;
 
@@ -32,9 +32,11 @@ Java_ObjectArrayTest_initInt2DArray(JNIEnv *env, jclass obj, int size) {
 		for (j = 0; j < size; j++) {
 			tmp[j] = i + j;
 		}
-		(*env)->SetIntArrayregion(env, iarr, 0, size, tmp);
+		(*env)->SetIntArrayRegion(env, iarr, 0, size, tmp);
+		/*
 		(*env)->SetObjectArrayElement(env, result, i , iarr);
 		(*env)->DeleteLocalRef(env, iarr);
+		*/
 	}
 
 	return result;
