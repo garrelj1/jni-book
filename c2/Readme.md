@@ -10,7 +10,7 @@ method declared in the file above
 	- This creates a `HelloWorld.h` file
 4. Write the C implementation of `HelloWorld.h` in `HelloWorld.c`
 5. Compile C code
-	- This creates a `HelloWorld.dll`
+	- This creates a `HelloWorld.dll` (in windows) or `libiHelloWorld.so` (in Linux)
 6. Run the program with `java`
 
 The steps above are outlined in the png provided here
