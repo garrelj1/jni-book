@@ -10,15 +10,15 @@ method declared in the file above
 	- This creates a `HelloWorld.h` file
 4. Write the C implementation of `HelloWorld.h` in `HelloWorld.c`
 5. Compile C code
-	- This creates a `HelloWorld.dll` (in windows) or `libiHelloWorld.so` (in Linux)
+	- This creates a `HelloWorld.dll` (in Windows) or `libiHelloWorld.so` (in Linux)
 6. Run the program with `java`
 
 The steps above are outlined in the png provided here
 
 ## Notes
-> To run the hello world program, we need to add `libHelloWorld.so` to the `JVM`
-> library path. We can do this by running `$ source ./setup.sh`. Note, specifically
-> run`./setup.sh` to make sure that you are running the `setup.sh` in this folder.
+> (In Linux) To run the hello world program, we need to add `libHelloWorld.so` to the `JVM`
+> library path. We can do this by running `$ source ./../common/setup.sh`. Note, specifically
+> run`./../setup.sh` to make sure that you are running the correct `setup.sh`.
 > `setup.sh` is a common name for a shell file and may be in your `PATH` variable already
 
 Two components needed to run the program
