@@ -11,6 +11,9 @@ the programmer must be sure not to run any blocking calls between a Get/ReleaseC
 method set. If something blocks between the Get and Release, this may create a
 dead lock situation since the garbage collector may be necessary to release the deadlock.
 
+- For finding JNI Class Descriptor for a given Java class simply use
+`javap -s <ClassName>`
+
 ### From section *1.3 Implications of Using the JNI*
 As a general rule, you should architect the application so that native methods
 are defined in as few classes as possible. This entails a cleaner isolation between
