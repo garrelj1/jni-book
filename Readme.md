@@ -5,6 +5,12 @@ Place to reference small JNI examples from *The Java Native Interface* book
 I'm simply going to use this section of the readme for sections from the text
 that I find important
 
+- I need to confirm, but it is my understanding that JNI functions such
+as Get/ReleaseStringCritical disable the JVM garbage collector. As a result
+the programmer must be sure not to run any blocking calls between a Get/ReleaseCritical
+method set. If something blocks between the Get and Release, this may create a
+dead lock situation since the garbage collector may be necessary to release the deadlock.
+
 ### From section *1.3 Implications of Using the JNI*
 As a general rule, you should architect the application so that native methods
 are defined in as few classes as possible. This entails a cleaner isolation between

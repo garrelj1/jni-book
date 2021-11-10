@@ -63,3 +63,34 @@ All references are of type `jobject` and JNI defines a few reference types such 
 How many characters are in a jstring? Use `GetStringLength`
 How many bytes are needed to represent a jdstring in UTF-8? Use the ANSI C `strlen`
 function on the return value of `GetStringUTFChars` or call the JNI function `GetStringUTFLength`
+
+### From section *3.3.1 Accessing Arrays in C*
+Arrays are represented as a `jarray` or a `jarray` subtype. For example, `jintArray`
+
+You cannot directly operate on a `jarray` as if it is a C array.
+The following access is illegal
+```
+JNIEXPORT jint JNICALL
+Java_IntArray_sumArray(JNIEnv *env, jobject obj, jintArray arr) {
+	int i, sum = 0;
+	for (i = 0; i < 10; i++) {
+		sum += arr[i];
+	}
+}
+```
+
+Instead you must use JNI functions to access the primitive array elements as follows
+```
+JNIEXPORT jint JNICALL
+Java_IntArray_sumArray(JNIEnv *env, jobject obj, jintArray arr) {
+	jint buf[10];
+	jint i, sum = 0;
+
+	(*env)->GetIntArrayRegion(env, arr, 0, 10, buf);
+	for (i = 0; i < 10; i++) {
+		sum += buf[i];
+	}
+
+	return sum;
+}
+```
