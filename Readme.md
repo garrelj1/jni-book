@@ -28,7 +28,7 @@ Before calling a native method the library must be loaded using the
 `System.loadLibrary("YourLibraryHere")`
 
 ### From section *2.4 Create the Native Method Header File*
-Native methods always receive two extract args in addition to args declared in the Java
+Native methods always receive two extra args in addition to args declared in the Java
 method declaration.
 1. `JNIEnv` interface pointer
 2. A `jobject` reference to the Java object that the native method is being called from 
