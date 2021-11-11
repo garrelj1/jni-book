@@ -25,7 +25,7 @@ Java_ObjectArray_initInt2DArray(JNIEnv *env, jclass obj, int size) {
 		int j;
 
 		jintArray iarr = (*env)->NewIntArray(env, size);
-		if (iarr = NULL) {
+		if (iarr == NULL) {
 			return NULL; // out of memory exception
 		}
 
@@ -33,10 +33,8 @@ Java_ObjectArray_initInt2DArray(JNIEnv *env, jclass obj, int size) {
 			tmp[j] = i + j;
 		}
 		(*env)->SetIntArrayRegion(env, iarr, 0, size, tmp);
-		/*
 		(*env)->SetObjectArrayElement(env, result, i , iarr);
 		(*env)->DeleteLocalRef(env, iarr);
-		*/
 	}
 
 	return result;
