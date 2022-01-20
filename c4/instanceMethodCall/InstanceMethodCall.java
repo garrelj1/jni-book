@@ -1,8 +1,8 @@
 class InstanceMethodCall {
 	private native void nativeMethod();
 
-	private void callback() {
-		System.out.println("In Java");
+	private void callback(String str) {
+		System.out.println(str);
 	}
 
 	public static void main(String args[]) {

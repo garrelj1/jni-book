@@ -11,6 +11,7 @@ Java_InstanceMethodCall_nativeMethod(JNIEnv *env, jobject obj) {
 		return;
 	}
 
+	jstring str = "Hello World";
 	printf("In C\n");
-	(*env)->CallVoidMethod(env, obj, mid);
+	(*env)->CallVoidMethod(env, obj, mid, str);
 }
