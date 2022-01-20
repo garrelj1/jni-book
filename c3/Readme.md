@@ -35,6 +35,7 @@ and instance method
 
 	a. Instance method: similar to the `this` pointer in C++. It's a reference to
 the object instance that the method is being called on
+	
 	b. Static method: reference to the class the method is called on
 
 ### From section *3.1.3 Mapping of Types*
